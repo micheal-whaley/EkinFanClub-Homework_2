@@ -1,13 +1,13 @@
 package homework_2;
 
 public class Student {
-	public void studentThing() {
-		
-	}
 	public Student(int newId, String newName, double newGrade) {
 		id = newId;
 		Name = newName;
 		grade = newGrade;
+	}
+	public Student() {
+
 	}
 	
 	public int getId() {
