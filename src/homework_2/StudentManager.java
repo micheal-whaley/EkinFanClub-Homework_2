@@ -31,7 +31,14 @@ public class StudentManager {
 		
 	}
 	public boolean searchStudentById(int id) {
-		return true;
+		for (Student student: students) {
+			if (student.getId()==id) {
+				System.out.println(student.toString());
+	            return true;
+			}
+		}
+		System.out.println("Student with id" + id + "could not be found. Please ensure the id is correct.");
+		return false;
 	}
 	public boolean updateStudentGradeById(int id, double grade) {
 		return true;
