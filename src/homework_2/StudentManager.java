@@ -28,6 +28,14 @@ public class StudentManager {
 		return true;
 	}
 	public void displayStudents() {
+		if(students == null)
+    {
+        System.out.println("No students to display.");
+    }
+    else
+    {
+        System.out.println(Arrays.toString(students));
+    }
 		
 	}
 	public boolean searchStudentById(int id) {
