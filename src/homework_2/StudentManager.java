@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class StudentManager {
 	public void studentManagerThing() {
@@ -34,7 +35,8 @@ public class StudentManager {
     }
     else
     {
-        System.out.println(Arrays.toString(students));
+		Student[] stdArray = students.toArray(new Student[0]);
+        System.out.println(Arrays.toString(stdArray));
     }
 		
 	}
@@ -49,9 +51,15 @@ public class StudentManager {
 		return false;
 	}
 	public boolean updateStudentGradeById(int id, double grade) {
-		
-
-		return true;
+		if (searchStudentById((id)) == true) {
+			for(Student student: students) {
+				if(student.getId() == id) {
+					student.setGrade(grade);
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 	
 }
